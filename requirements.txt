@@ -1,0 +1,9 @@
+flask
+langchain-community
+faiss-cpu
+sentence-transformers
+pandas
+numpy
+requests
+llama-cpp-python  # ✅ For running LLaMA 3.2 locally
+pypdf  # ✅ For processing financial PDFs
