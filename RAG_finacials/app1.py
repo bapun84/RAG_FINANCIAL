@@ -1,20 +1,18 @@
 import streamlit as st
-from generator import generate_response
+from generator import generate_response  # We'll fix generator to accept 'mode'
 
 def main():
     st.title("RAG Financial Q&A")
 
-    st.write("**Ask about the financial statements**")
-    
-    # Let user pick retrieval approach if you want to show both Basic & Advanced
+    # Let user pick retrieval approach if you want both Basic & Multi-Stage:
     retrieval_mode = st.selectbox("Select Retrieval Mode:", ["basic", "multi-stage"])
 
     user_query = st.text_input("Enter your query here:")
-    
+
     if st.button("Submit"):
         if user_query.strip():
             with st.spinner("Generating answer..."):
-                # If your 'generate_response' can accept a 'mode' param:
+                # We pass the retrieval_mode to generate_response
                 answer = generate_response(user_query, mode=retrieval_mode)
                 st.markdown("### Answer")
                 st.write(answer)
