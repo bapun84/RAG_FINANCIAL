@@ -7,7 +7,7 @@ import ollama
 load_dotenv()
 
 # 2️⃣ Initialize Ollama Model
-MODEL_NAME = "phi"  # or "llama2" or any local model name recognized by Ollama
+MODEL_NAME = "google/flan-t5-small"
 
 def ollama_chat_model(prompt):
     """Sends a user prompt to the locally available Ollama model and returns the model's response."""
